@@ -1,0 +1,7 @@
+project(test_graph)
+include_directories(${CMAKE_SOURCE_DIR}/src//mnt/d/Code/c++/data_struct/test/graph)
+include_directories(/mnt/d/Code/c++/data_struct)
+file(GLOB_RECURSE SRCS *.cc *.cpp *.h *.hpp ${CMAKE_SOURCE_DIR}/src//mnt/d/Code/c++/data_struct/test/graph/*.cc ${CMAKE_SOURCE_DIR}/src//mnt/d/Code/c++/data_struct/test/graph/*.h ${CMAKE_SOURCE_DIR}/src//mnt/d/Code/c++/data_struct/test/graph/*.cpp ${CMAKE_SOURCE_DIR}/src//mnt/d/Code/c++/data_struct/test/graph/*.hpp)
+add_executable(${PROJECT_NAME} ${SRCS})
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+gtest_discover_tests(${PROJECT_NAME})
